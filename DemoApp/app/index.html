@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="eventsApp">
+
+<head>
+
+</head>
+
+<body>
+    <div>
+        <div ng-controller="EventController">
+            <img ng-src="{{event.imageUrl}}">
+            <h2>{{event.firstName}}</h2>
+            <h2>{{event.lastName}}</h2>
+
+            <hr>
+            <h2>Sessions</h2>
+            <ul>
+                <li ng-repeat="session in event.Sessions">
+                    {{session.name}}
+                </li>
+            </ul>
+        </div>
+        <ng-view></ng-view>
+    </div>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/services/EventData.js"></script>
+    <script src="./js/controllers/EventController.js"></script>
+</body>
+
+</html>
